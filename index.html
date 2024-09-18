@@ -2,158 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Regulation Community // Kicker Picker Stats Tracker - 2024</title>
+    <title>Regulation Community // Home</title>
     <script>
-        // JavaScript to rotate through 9 favicons
-        document.addEventListener('DOMContentLoaded', function () {
-            let currentIconIndex = 1;
-            const totalIcons = 9;
-            const rotationInterval = 130;
+		// JavaScript to rotate through 9 favicons
+	document.addEventListener('DOMContentLoaded', function () {
+		let currentIconIndex = 1; // Start with the first icon
+		const totalIcons = 9; // Total number of icons
+		const rotationInterval = 130; // Time interval in milliseconds (e.g., 2000ms = 2 seconds)
 
-            function updateFavicon() {
-                const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-                favicon.rel = 'icon';
-                favicon.type = 'image/png';
-                favicon.href = `../../iconic/${currentIconIndex}.png`;
+		// Function to update the favicon
+		function updateFavicon() {
+			const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+			favicon.rel = 'icon';
+			favicon.type = 'image/png';
+			favicon.href = `iconic/${currentIconIndex}.png`; // Set the favicon path
 
-                if (!document.querySelector('link[rel="icon"]')) {
-                    document.head.appendChild(favicon);
-                }
-                currentIconIndex = currentIconIndex < totalIcons ? currentIconIndex + 1 : 1;
-            }
+			// If favicon does not exist, append it to the head
+			if (!document.querySelector('link[rel="icon"]')) {
+				document.head.appendChild(favicon);
+			}
 
-            updateFavicon();
-            setInterval(updateFavicon, rotationInterval);
-        });
-    </script>
-    <link rel="stylesheet" href="styles.css">
+			// Increment the index and reset if it exceeds the total number of icons
+			currentIconIndex = currentIconIndex < totalIcons ? currentIconIndex + 1 : 1;
+		}
+
+		// Initial call to set the favicon
+		updateFavicon();
+
+		// Set interval to rotate through favicons
+		setInterval(updateFavicon, rotationInterval);
+	});
+	</script>
+	<link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Regulation Podcast | Kicker Picker 2024">
-    <meta property="og:description" content="Join the Regulation Podcast Kicker Picker 2024 challenge! Andrew has compiled every starting NFL kicker for the 2024 season. ANEGG drafts their ultimate kicker team to score the most points: 1 point for extra attempts, 3 for field goals. Who would you kick pick?">
-    <meta property="og:image" content="https://regulationcommunity.com/imgs/kicker-picker-preview.jpg">
-    <meta property="og:url" content="https://regulationcommunity.com/2024/KickerPicker/index.php">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-    <h1>Kicker Picker Stats Tracker - 2024</h1>
-
-    <!-- Podium Display for Top 3 Players -->
-    <div id="podium-container">
-        <div class="podium" id="second-place">
-            <img src="" alt="Second Place" id="second-place-image" class="podium-image">
-            <span class="podium-rank">🥈</span>
-            <span class="podium-player" id="second-place-player">2nd Place</span>
-            <span class="podium-points" id="second-place-points">0 pts</span>
-        </div>
-        <div class="podium" id="first-place">
-            <img src="" alt="First Place" id="first-place-image" class="podium-image">
-            <span class="podium-rank">🥇</span>
-            <span class="podium-player" id="first-place-player">1st Place</span>
-            <span class="podium-points" id="first-place-points">0 pts</span>
-        </div>
-        <div class="podium" id="third-place">
-            <img src="" alt="Third Place" id="third-place-image" class="podium-image">
-            <span class="podium-rank">🥉</span>
-            <span class="podium-player" id="third-place-player">3rd Place</span>
-            <span class="podium-points" id="third-place-points">0 pts</span>
-        </div>
-    </div>
+    <h1>Welcome to Regulation Podcast Community</h1>
     
-    <div id="players-container">
-        <!-- User Columns -->
-        <div class="player-column" id="Andrew">
-            <h2>Andrew</h2>
-            <img src="imgs/andrew.webp" alt="Andrew" class="player-profile">
-            <div class="loader" id="Andrew-loader">Loading...</div>
-            <ul class="kicker-list" id="Andrew-kickers">
-                <!-- Kickers will be dynamically inserted here -->
-            </ul>
-            <div class="player-total" id="Andrew-total">Total Points: 0</div>
-            <div class="player-prediction" id="Andrew-prediction">Projected Season Total: 0</div>
-        </div>
-        <div class="player-column" id="Nick">
-            <h2>Nick</h2>
-            <img src="imgs/nick.jpg" alt="Nick" class="player-profile">
-            <div class="loader" id="Nick-loader">Loading...</div>
-            <ul class="kicker-list" id="Nick-kickers">
-                <!-- Kickers will be dynamically inserted here -->
-            </ul>
-            <div class="player-total" id="Nick-total">Total Points: 0</div>
-            <div class="player-prediction" id="Nick-prediction">Projected Season Total: 0</div>
-        </div>
-        <div class="player-column" id="Eric">
-            <h2>Eric</h2>
-            <img src="imgs/eric.jpg" alt="Eric" class="player-profile">
-            <div class="loader" id="Eric-loader">Loading...</div>
-            <ul class="kicker-list" id="Eric-kickers">
-                <!-- Kickers will be dynamically inserted here -->
-            </ul>
-            <div class="player-total" id="Eric-total">Total Points: 0</div>
-            <div class="player-prediction" id="Eric-prediction">Projected Season Total: 0</div>
-        </div>
-        <div class="player-column" id="Geoff">
-            <h2>Geoff</h2>
-            <img src="imgs/geoff.jpg" alt="Geoff" class="player-profile">
-            <div class="loader" id="Geoff-loader">Loading...</div>
-            <ul class="kicker-list" id="Geoff-kickers">
-                <!-- Kickers will be dynamically inserted here -->
-            </ul>
-            <div class="player-total" id="Geoff-total">Total Points: 0</div>
-            <div class="player-prediction" id="Geoff-prediction">Projected Season Total: 0</div>
-        </div>
-        <div class="player-column" id="Gavin">
-            <h2>Gavin</h2>
-            <img src="imgs/gavin.jpg" alt="Gavin" class="player-profile">
-            <div class="loader" id="Gavin-loader">Loading...</div>
-            <ul class="kicker-list" id="Gavin-kickers">
-                <!-- Kickers will be dynamically inserted here -->
-            </ul>
-            <div class="player-total" id="Gavin-total">Total Points: 0</div>
-            <div class="player-prediction" id="Gavin-prediction">Projected Season Total: 0</div>
-        </div>
-    </div>
-	
-	<!-- Update Badge with ARIA Attributes -->
-<div id="update-badge" title="Click to see recent updates" role="button" aria-label="Recent Updates" aria-haspopup="true" tabindex="0">
-    <i class="fas fa-bell" aria-hidden="true"></i>
-    <span id="update-notification">3</span>
-</div>
-
-
-
-    <div id="update-popout" class="hidden">
-        <div id="update-popout-content">
-            <span id="close-popout">&times;</span>
-            <h2>Recent Updates</h2>
-            <ul id="updates-list">
-                <!-- Recent updates will be listed here -->
-            </ul>
-        </div>
-    </div>
-	
-	<div id="refresh-timer">Next update in: 60 seconds</div>
-    
-    <div class="color-legend">
-        <ul>
-            <li><span class="legend-box released"></span> Released Player</li>
-            <li><span class="legend-box injured"></span> Injured Player</li>
-            <li><span class="legend-box no-stats"></span> No Stats Available</li>
-        </ul>
+    <!-- Introductory Section -->
+    <div class="intro-section">
+        <p>
+            Welcome to the Regulation Podcast Community – a vibrant space where humor, friendship, and creativity converge. 
+            Join hosts Andrew, Nick, Eric, Geoff, and Gavin as they explore everything from absurd games and quirky conversations to interactive challenges with their audience. 
+            Get involved, share your thoughts, and be part of a community that celebrates laughter, camaraderie, and the unexpected.
+        </p>
     </div>
 
-    <!-- Placeholder image for failed image loads -->
-    <img src="imgs/placeholder.png" alt="Placeholder" style="display: none;">
+    <!-- Link to 2024 Kicker Picker -->
+    <div class="link-section">
+        <h2>Check out our Latest Feature:</h2>
+        <a href="2024/KickerPicker" class="button-link">Go to 2024 Kicker Picker</a>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-media-links">
+        <a href="https://discord.gg/theregulationpod" target="_blank" class="social-link discord">Discord</a>
+        <a href="https://www.youtube.com/@theregulationpod" target="_blank" class="social-link youtube">YouTube</a>
+        <a href="https://www.patreon.com/theregulationpod/posts" target="_blank" class="social-link patreon">Patreon</a>
+        <a href="https://www.twitch.tv/theregulationpod" target="_blank" class="social-link twitch">Twitch</a>
+    </div>
 
     <!-- Powered by N3RGLY badge -->
     <div class="powered-by">
         Powered by <a href="https://twitch.tv/n3rgly" target="_blank">N3RGLY</a>
     </div>
-
-    <script src="app.js"></script>
 </body>
 </html>

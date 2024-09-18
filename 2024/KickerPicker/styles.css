@@ -1,0 +1,652 @@
+/* Dark Mode Color Variables */
+:root {
+    --bg-color: #121212;
+    --card-bg-color: #1f1f1f;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #a0a0a0;
+    --border-color: #333;
+    --highlight-color: #272727;
+    --accent-color: #00bcd4;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0 15px; /* Reduced margin */
+    font-size: 34px; /* Slightly smaller font size */
+    color: var(--text-color);
+    letter-spacing: 1.5px;
+}
+
+/* Podium Style */
+#podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.podium {
+    text-align: center;
+    background-color: var(--card-bg-color);
+    padding: 8px; /* Reduced padding */
+    margin: 0 8px; /* Reduced margin */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    position: relative;
+    width: 140px; /* Reduced width */
+    height: 140px; /* Reduced height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.podium-image {
+    width: 50px; /* Reduced size */
+    height: 50px; /* Reduced size */
+    border-radius: 50%;
+    position: absolute;
+    top: 15px; /* Adjusted for smaller height */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid var(--accent-color);
+}
+
+#first-place {
+    height: 140px; /* Adjusted height */
+}
+
+#second-place {
+    height: 120px; /* Adjusted height */
+}
+
+#third-place {
+    height: 100px; /* Adjusted height */
+}
+
+.podium-rank {
+    font-size: 26px; /* Reduced font size */
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.podium-player {
+    font-size: 14px; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 3px; /* Reduced margin */
+    color: var(--text-color);
+}
+
+.podium-points {
+    font-size: 13px; /* Reduced font size */
+    color: var(--secondary-text-color);
+}
+
+/* Profile Picture Style for Players */
+.player-profile {
+    width: 70px; /* Reduced size */
+    height: 70px; /* Reduced size */
+    border-radius: 50%;
+    margin: 0 auto 8px; /* Reduced margin */
+    display: block;
+    border: 2px solid var(--accent-color);
+}
+
+#players-container-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    width: 100%;
+    padding: 15px; /* Reduced padding */
+}
+
+#players-container {
+    display: flex;
+    gap: 15px; /* Reduced gap */
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 15px 0; /* Reduced padding */
+}
+
+.player-column {
+    background-color: var(--card-bg-color);
+    padding: 15px; /* Reduced padding */
+    border-radius: 12px;
+    width: 260px; /* Reduced width */
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.player-column:hover {
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.player-column h2 {
+    text-align: center;
+    margin-bottom: 12px; /* Reduced margin */
+    font-size: 20px; /* Reduced font size */
+    color: var(--text-color);
+}
+
+.kicker-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.kicker-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Reduced margin */
+    padding: 8px; /* Reduced padding */
+    background-color: var(--highlight-color);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-size: 14px; /* Reduced font size */
+}
+
+.kicker-item:hover {
+    background-color: var(--accent-color);
+}
+
+.kicker-info {
+    display: flex;
+    align-items: center;
+}
+
+.kicker-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.kicker-link:hover {
+    color: var(--accent-color);
+}
+
+.kicker-info img {
+    width: 50px; /* Reduced size */
+    height: 50px; /* Reduced size */
+    border-radius: 50%;
+    margin-right: 8px; /* Reduced margin */
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transition: transform 0.3s;
+}
+
+.kicker-info img:hover {
+    transform: scale(1.1);
+}
+
+/* Existing styles... */
+
+/* Styles for Released Kickers */
+.released-kicker {
+    background-color: #8b0000; /* Red background for released kicker */
+    color: #fff; /* White text for contrast */
+}
+
+.released-kicker .kicker-status {
+    color: #fff; /* White color for the status text */
+}
+
+/* Styles for Injured Players */
+.injured-kicker {
+    background-color: #d4a017; /* Dark yellow background for injured kicker */
+    color: #fff; /* White text for contrast */
+}
+
+.injured-kicker .kicker-status {
+    color: #fff; /* White color for the status text */
+}
+
+/* New styles to highlight the injury status text */
+.kicker-status {
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    padding: 4px 6px;
+    background-color: #333;
+    border-radius: 4px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    display: block; /* Ensure it takes up its own line */
+    max-width: 100%; /* Make sure it doesn't exceed container width */
+    cursor: help; /* Show a help cursor when hovering to indicate a tooltip */
+}
+
+
+/* Existing styles for injury status */
+.kicker-status.injury {
+    color: #d4a017;
+    background-color: #333;
+}
+
+
+
+/* Ensure consistency of other elements */
+.kicker-details {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.kicker-name {
+    font-weight: bold;
+    font-size: 14px; /* Reduced font size */
+    color: var(--text-color);
+}
+
+
+.kicker-team {
+    font-size: 16px; /* Reduced font size */
+    color: var(--secondary-text-color);
+}
+
+.kicker-stats {
+    font-size: 11px; /* Reduced font size */
+    color: var(--secondary-text-color);
+}
+
+
+
+.player-total {
+    margin-top: 20px; /* Reduced margin */
+    font-size: 18px; /* Reduced font size */
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px; /* Reduced padding */
+    letter-spacing: 0.5px;
+}
+
+.loader {
+    text-align: center;
+    font-size: 14px; /* Reduced font size */
+    color: var(--secondary-text-color);
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+.error-message {
+    color: #ff5c5c;
+    font-size: 12px;
+    margin-left: 8px; /* Reduced margin */
+}
+
+button {
+    display: block;
+    margin: 15px auto 0; /* Reduced margin */
+    padding: 8px 16px; /* Reduced padding */
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #008ba3;
+}
+
+
+/* Styles for Released Kickers */
+.released-kicker {
+    background-color: #8b0000; /* Red background for released kicker */
+    color: #fff; /* White text for contrast */
+}
+
+.released-kicker .kicker-status {
+    color: #fff; /* White color for the status text */
+}
+
+
+/* Styles for Injured Players */
+.injured-kicker {
+    background-color: #d4a017; /* Dark yellow background for injured kicker */
+    color: #fff; /* White text for contrast */
+}
+
+.injured-kicker .kicker-status {
+    color: #fff; /* White color for the status text */
+}
+
+/* Styles for Players with No Stats */
+.no-stats-kicker {
+    background-color: #4b0082; /* Dark purple background for no stats kicker */
+    color: #fff; /* White text for contrast */
+}
+
+.no-stats-kicker .kicker-status {
+    color: #fff; /* White color for the status text */
+}
+
+.no-stats-kicker .kicker-details {
+    opacity: 0.8; /* Slightly lower opacity to indicate inactive status */
+}
+
+/* Styles for the Powered by N3RGLY badge */
+.powered-by {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.powered-by a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.powered-by a:hover {
+    text-decoration: underline;
+}
+
+/* Color Legend Section */
+.color-legend {
+    text-align: center;
+    margin-top: 10px;
+    background-color: var(--card-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-legend h3 {
+    color: var(--text-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.color-legend ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.color-legend li {
+    color: var(--text-color);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.legend-box.released {
+    background-color: #8b0000; /* Matches released kicker color */
+}
+
+.legend-box.injured {
+    background-color: #d4a017; /* Matches injured kicker color */
+}
+
+.legend-box.no-stats {
+    background-color: #4b0082; /* Matches no stats kicker color */
+}
+
+.badge-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    margin: 20px auto;
+}
+
+.badge-title {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.badge-counter {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--accent-color);
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: var(--text-color);
+}
+/* end main theme */
+
+/* Updated Styles for Predicted Points Section */
+.player-prediction {
+    margin-top: 10px; /* Space between total points and predicted points */
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    padding: 8px; /* Add some padding around the text */
+    border-radius: 8px; /* More rounded corners for a softer look */
+    background-color: var(--highlight-color); /* Subtle background color to match theme */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions for multiple properties */
+    box-shadow: 0 2px 5px var(--shadow-color); /* Slight shadow for depth */
+}
+
+/* Dynamic Color Coding for Predicted Points */
+.player-prediction.green {
+    color: #28a745; /* Bright green color for positive prediction */
+    background-color: rgba(40, 167, 69, 0.1); /* Light green background for positive prediction */
+}
+
+.player-prediction.red {
+    color: #dc3545; /* Bright red color for negative prediction */
+    background-color: rgba(220, 53, 69, 0.1); /* Light red background for negative prediction */
+}
+
+/* Highlighting for Accuracy */
+.player-prediction.accurate {
+    border: 2px solid #00bcd4; /* Accent color border to highlight accurate predictions */
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.4); /* Enhanced shadow for accurate predictions */
+}
+
+/* Additional hover effect for better UX */
+.player-prediction:hover {
+    transform: scale(1.08); /* Slightly larger increase in size on hover for better feedback */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow effect for hover */
+    background-color: var(--card-bg-color); /* Revert to card background on hover */
+}
+
+#refresh-timer {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+
+/* Update Badge Styles */
+#update-badge {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff3b3f 0%, #ff7f50 100%);
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#update-badge:hover {
+    background: linear-gradient(135deg, #e22e32 0%, #ff6347 100%);
+    transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+/* Notification Indicator Styles */
+#update-notification {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ffc107; /* Amber color for contrast */
+    color: black;
+    padding: 4px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Pop-out Section Styles for Dark Mode */
+#update-popout {
+    position: fixed;
+    top: 80px; /* Adjusted to avoid overlap with the badge */
+    right: 20px;
+    width: 320px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #1e1e1e; /* Dark background color */
+    border: 1px solid #333; /* Darker border color */
+    border-radius: 8px;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease;
+}
+
+#update-popout-content {
+    padding: 20px;
+    position: relative;
+    color: #f1f1f1; /* Light text color for contrast */
+}
+
+#update-popout h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #ffffff; /* White color for the heading */
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+#update-popout ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+#update-popout ul li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #2a2a2a; /* Slightly lighter dark background for list items */
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#update-popout ul li:hover {
+    background-color: #3a3a3a; /* Darker on hover */
+}
+
+#update-popout ul li::before {
+    content: "•";
+    color: #ff3b3f; /* Accent color */
+    margin-right: 10px;
+}
+
+#update-popout a {
+    color: #4da6ff; /* Accent color for links */
+    text-decoration: none;
+}
+
+#update-popout a:hover {
+    text-decoration: underline;
+}
+
+/* Close Button Styles */
+#close-popout {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f1f1f1;
+    transition: color 0.2s;
+}
+
+#close-popout:hover {
+    color: #ff3b3f; /* Accent color on hover */
+}
+
+/* Scrollbar Styles */
+#update-popout::-webkit-scrollbar {
+    width: 8px;
+}
+
+#update-popout::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+#update-popout::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Hidden Class to Control Visibility */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* Keyframes for Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 59, 63, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 59, 63, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 59, 63, 0);
+    }
+}
+
+/* Apply Animation to the Badge When There Are New Updates */
+#update-badge.new-updates {
+    animation: pulse 2s infinite;
+}
