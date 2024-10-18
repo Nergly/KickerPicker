@@ -75,7 +75,7 @@ const players = {
             { name: 'Chase McLaughlin', team: 'TB', id: 3150744 },
             { name: 'Graham Gano', team: 'NYG', id: 12460 },
             { name: 'Matt Prater', team: 'ARI', id: 11122 },
-            { name: 'Lucas Havrisik', team: 'CLE', id: 4245661 },
+            { name: 'Lucas Havrisik', team: 'BUF', id: 4245661 },
             { name: 'Will Reichard', team: 'MIN', id: 4567104 }
         ],
     },
