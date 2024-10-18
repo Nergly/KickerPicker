@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Sample Recent Updates
     const recentUpdates = [
-	'Green Bay Packers release Brayden Narveson'
-	'Buffalo Bills pickup Lucas Havrisik'
+	'Green Bay Packers release Brayden Narveson',
+	'Buffalo Bills pickup Lucas Havrisik',
     'Added season point total prediction.',
     'Real-time statistics now available!',
     'Added refresh timer to display next update.',
