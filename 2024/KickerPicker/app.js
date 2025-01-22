@@ -64,7 +64,7 @@ const players = {
         kickers: [
             { name: 'Jake Bates', team: 'DET', id: 4689936 },
             { name: 'Jake Moody', team: 'SF', id: 4372066 },
-            { name: 'Cade York', team: 'WSH', id: 4428963 },
+            { name: 'Cade York', team: 'CIN', id: 4428963 },
             { name: 'Joshua Karty', team: 'LAR', id: 4566192 },
             { name: 'Wil Lutz', team: 'DEN', id: 2985659 },
             { name: 'Tyler Bass', team: 'BUF', id: 3917232 }
